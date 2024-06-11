@@ -153,15 +153,13 @@ formulaire.addEventListener('submit', ()=>{
     let nouveauMeteo = selectMeteo.value
 
     //Récupérer les values des routes + transformer en tableau//
-    let routeOptions = selectRoute.selectedOptions;
-    let nouveauRoute = Array.from(routeOptions).map(option => option.value);
+    let nouveauRoute = Array.from(document.querySelectorAll('input[name="route"]:checked')).map(cb => cb.value);
 
     //Récupérer la value du trafic//
     let nouveauTrafic = selectTrafic.value
 
     //Récupérer les values des manoeuvres + transformer en tableau
-    let manoeuvreOptions = selectManoeuvre.selectedOptions;
-    let nouveauManoeuvre = Array.from(manoeuvreOptions).map(option => option.value);
+    let nouveauManoeuvre = Array.from(document.querySelectorAll('input[name="manoeuvre"]:checked')).map(cb => cb.value);
 
     //On définit d'abord les bons formats pour les dates//
     nouveauDepart = new Date(nouveauDepart)
