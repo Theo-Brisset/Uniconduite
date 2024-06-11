@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset = "utf-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="MonCiné - Le cinéma de quartier à Anglet propose une sélection de films et séries de qualité, des informations sur les films à venir, et plus encore.">
+        <title>UniConduite - suivre son avancée dans la conduite accompagnée</title>
+        <link rel="icon" href="img/roue-de-voiture.png" type="image/x-icon">
+        <link rel="icon" href="#">
+        <link href="styles/reset.css" rel="stylesheet">
+        <link href="styles/style.css" rel="stylesheet">
+        <script src="script/afficherFormulaire.js"></script>
+        <script src="script/localStorage.js"></script>
+    </head>
+    <body>
+    <header>
+        <div class="navigation">
+            <h1><span>UniConduite</span></h1>
+            <nav aria-label="Menu principal">
+                <ul>
+                    <li><a href="#">Se connecter</a></li>
+                    <li><a href="index.html">Enregistrer une expérience</a></li>
+                    <li><a href="dashboard.html">Vérifier l'avancée</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <main>
+            <section class="ajouter-experience" id="ajouterExperience">
+                <h2>Enregistrer une nouvelle expérience de conduite ?</h2>
+                <p>L'application UniConduite permet de suivre votre avancée dans la conduite accompagnée. Grace à elle, vous pouvez voir le nombre de kilomètres effectués, mais aussi le temps passé à vous entraîner à conduire, les types d'exercices réalisés et dans quelles conditions !</p> 
+                <p>Tout cela vous permet de vraiment savoir quand vous serez prêt à passer l'examen du permis.</p>
+                <button id="lancerForm" aria-label="Cliquez pour commencer à enregistrer une expérience de conduite">
+                    <img src="img/signe-plus-blanc.png">
+                </button>
+            </section>
+            <section id="sectionForm" class="hidden">
+                <h2>Enregistrer votre expérience de conduite</h2>
+                <form id="formulaire">
+                    <fieldset id="time" class="deux-colonnes">
+                        <h3>Quand êtes vous parti et revenu ?</h3>
+                        <div class="gauche">
+                            <label for="date">Date départ</label>
+                            <input type="date" id="date" name="date" required>
+                            <label for="heure" class="heure">Heure départ</label>
+                            <input type="time" id="heure" name="heure" required> 
+                        </div>
+                        <div class="droite">
+                            <label for="dateR">Date retour</label>
+                            <input type="date" id="dateR" name="dateR" required>  
+                            <label for="heureR" class="heure">Heure retour</label>
+                            <input type="time" id="heureR" name="heureR" required> 
+                        </div>
+                    </fieldset>
+                    <fieldset id="distance" class="">
+                        <h3>Combien de kilomètres avez-vous roulé ?</h3>
+                        <div class="centre">
+                            <label for="km">Kilomètres</label>
+                            <input type="text" id="km" name="km" pattern="\d+" placeholder="Renseignez les km parcourus" required>
+                        </div> 
+                    </fieldset>
+                    <fieldset id="conditions" class="deux-colonnes">
+                        <h3> Vous avez roulé...</h3>
+                        <div class="gauche">
+                            <label for="meteo">Sous quel météo ?</label>
+                            <select name="meteo" id="meteo" required>
+                                <option value="" hidden>-- Indiquer la météo --</option> 
+                                <!-- <option value="1">Clair</option>
+                                <option value="2">Nuageux</option>
+                                <option value="3">Couvert</option>
+                                <option value="4">Pluvieux</option>
+                                <option value="5">Brumeux</option>
+                                <option value="6">Neigeux</option>
+                                <option value="7">Orageux</option>
+                                <option value="8">Tempetueux</option> -->
+                            </select>
+                        </div>
+                        
+                        <div class="droite">
+                            <label for="trafic">Avec quel trafic ? </label>
+                            <select name="trafic" id="trafic" required>
+                                <option value="" hidden>-- Indiquer le trafic --</option>
+                                <!--    <option value="1">Faible</option>
+                                <option value="2">Modéré</option>
+                                <option value="3">Fort</option>
+                                <option value="4">Fluctuant</option> -->
+                            </select>
+                        </div>
+                        <div class="gauche" id="route">
+                            <p>Sur quel type de route ?</p>
+                            
+                        </div>
+                        <div class="droite" id="manoeuvre">
+                            <p>En faisant quelles manoeuvres ?</p>
+                            
+                        </div>
+                    </fieldset>
+                    <button type="submit" id="envoyerForm" aria-label="Cliquez pour enregistrer l'expérience !">
+                        <img src="img/signe-plus-blanc.png" alt="Submit" >
+                    </button>
+                </form>
+            </section>
+            <section class="hidden" id="afficherRecap">
+                <h2>Voici les trajets déjà réalisés</h2>
+
+            </section>
+        </main>
+    </body>
+    <footer>
+        <div>
+            <span>UniConduite</span>
+            <div>
+                <p>Projet réalisé par l'équipe 4</p>
+                <p>Mathieu [&] Théo</p>
+            </div>
+            <nav aria-label="Menu principal">
+                <ul>
+                    <li><a href="#">Se connecter</a></li>
+                    <li><a href="#">Enregistrer une expérience</a></li>
+                    <li><a href="#">Vérifier l'avancée</a></li>
+                </ul>
+            </nav>
+        </div>    
+    </footer> 
+</html>
